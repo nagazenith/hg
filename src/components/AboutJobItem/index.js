@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {MdLocationOn} from 'react-icons/md'
@@ -5,6 +6,7 @@ import {AiFillStar} from 'react-icons/ai'
 import {BiLinkExternal} from 'react-icons/bi'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
+// eslint-disable-next-line import/extensions
 import SimilarJobs from '../SimilarJobs'
 import './index.css'
 
@@ -70,6 +72,7 @@ class AboutJobItem extends Component {
           companyLogoUrl: eachItem.company_logo_url,
           id: eachItem.id,
           jobDescription: eachItem.job_description,
+          employmentType: eachItem.employment_type,
           location: eachItem.location,
           rating: eachItem.rating,
           title: eachItem.title,
@@ -209,7 +212,7 @@ class AboutJobItem extends Component {
   )
 
   renderJobLoadingView = () => (
-    <div className="job-details-loader" testid="loader">
+    <div className="job-details-loader" data-testid="loader">
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
   )

@@ -1,8 +1,11 @@
+/* eslint-disable import/extensions */
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import {AiOutlineSearch} from 'react-icons/ai'
+// eslint-disable-next-line import/extensions
 import Header from '../Header'
+// eslint-disable-next-line import/no-unresolved
 import JobItem from '../JobItem'
 import './index.css'
 
@@ -201,7 +204,7 @@ class AllJobs extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
   )
@@ -359,7 +362,7 @@ class AllJobs extends Component {
                 onKeyDown={this.onEnterSearchInput}
               />
               <button
-                testid="searchButton"
+                data-testid="searchButton"
                 type="button"
                 className="search-button"
                 onClick={this.onSubmitSearchInput}
